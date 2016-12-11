@@ -1,4 +1,3 @@
-import { searchWikiAction } from '../src/actions/wikiActions'
 import reducer from '../src/reducers/'
 import * as types from '../src/actions/constants'
 
