@@ -14,7 +14,7 @@ describe('Test for Action creators', () => {
 
   it('should contain the search query', () => {
     const action = searchWikiAction(query)
-    expect(action.query).toEqual(query)
+    expect(action.payload).toEqual(query)
   })
   
 })

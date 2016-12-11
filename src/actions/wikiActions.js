@@ -1,5 +1,6 @@
 import * as types from './constants'
 
-export const searchWikiAction = () => ({
-  type: types.SEARCH_WIKI_REQUEST
+export const searchWikiAction = (query) => ({
+  type: types.SEARCH_WIKI_REQUEST,
+  payload: query
 })
