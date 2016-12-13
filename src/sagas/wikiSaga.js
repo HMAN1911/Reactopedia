@@ -1,4 +1,4 @@
-import { put, call } from 'redux-saga/effects'
+import { put } from 'redux-saga/effects'
 import * as types from '../actions/constants'
 
 export default function* wikiSaga() {
