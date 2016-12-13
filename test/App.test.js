@@ -1,14 +1,15 @@
 import React from 'react'
-import { shallow } from 'enzyme'
-import App from '../src/App'
+import { shallow, mount } from 'enzyme'
+import { connect } from 'react-redux'
+import { App } from '../src/App'
+import { Search } from '../src/components/Search'
+import createStore from '../src/stores'
 
 describe('test App component', () => {
-  const wrapper = shallow(<App />)
+  const store = createStore()
+  const wrapper = mount(<App store={ store }/>)
 
-  it('should contain a div', () => {
-    
-    expect(wrapper.find('div')).toBeTruthy();
+  it('should have access to store', () => {
+    expect(wrapper.props().store.getState()).toBeTruthy()
   })
-
-  
 })
