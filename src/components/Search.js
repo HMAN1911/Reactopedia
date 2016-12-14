@@ -5,8 +5,8 @@ export class Search extends Component {
   render() {
     return (
       <div>
-        <input ref="inp" type="text" onChange={() => {
-            this.props.state.dispatch({type: "SET_QUERY", query: this.refs.inp.value})
+        <input type="text" onChange={(e) => {
+            this.props.state.dispatch({type: "SET_QUERY", query: e.target.value})
         }}/>
         <button onClick={() => {
           this.props.state.dispatch({type: "SEARCH_WIKI_REQUEST", paylaod: this.refs.inp.value})
