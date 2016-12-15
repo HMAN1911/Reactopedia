@@ -1,13 +1,27 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { searchWikiAction } from './actions/wikiActions'
+import { searchWikiAction, setQueryAction } from './actions/wikiActions'
 import { Search } from './components/Search'
 
 export class App extends Component {
+  constructor() {
+    super()
+    this.handleSetQuery = this.handleSetQuery.bind(this)
+    this.handleSearchWiki = this.handleSearchWiki.bind(this)
+  }
+
+  handleSetQuery(value) {
+    this.props.dispatch(setQueryAction(value))
+  }
+
+  handleSearchWiki() {
+    this.props.dispatch(searchWikiAction(this.props.query))
+  }
 
   render() {
+    console.log(this.props)
     return (
-      <Search state={this.props} />
+      <Search setQuery={this.handleSetQuery} searchWiki={this.handleSearchWiki} />
     )
   }
 }
