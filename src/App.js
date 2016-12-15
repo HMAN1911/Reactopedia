@@ -19,7 +19,6 @@ export class App extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <Search setQuery={this.handleSetQuery} searchWiki={this.handleSearchWiki} />
     )
