@@ -20,7 +20,8 @@ export class App extends Component {
 
   render() {
     return (
-      <Search setQuery={this.handleSetQuery} searchWiki={this.handleSearchWiki} />
+      <Search setQuery={this.handleSetQuery} 
+              searchWiki={this.handleSearchWiki} />
     )
   }
 }
