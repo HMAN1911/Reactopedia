@@ -7,6 +7,8 @@ const wikiReducer = (state = {query: ``, articles: []}, action) => {
       return {...state, articles: action.articles}
     case types.SET_QUERY:
       return {...state, query: action.query}
+    case types.SEARCH_WIKI_FAILURE:
+      return state
     default:
       return state
   }
