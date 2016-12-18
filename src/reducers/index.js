@@ -1,6 +1,8 @@
 import * as types from '../actions/constants'
 
-const wikiReducer = (state = { query: ``, articles: [], loading: false }, action) => {
+const initialState = { query: ``, articles: [], loading: false }
+
+const wikiReducer = (state = initialState, action) => {
   
   switch(action.type) {
     case types.SEARCH_WIKI_SUCCESS:
@@ -10,7 +12,7 @@ const wikiReducer = (state = { query: ``, articles: [], loading: false }, action
     case types.SEARCH_WIKI_FAILURE:
       return {...state, loading: false}
     case types.SEARCH_WIKI_REQUEST:
-      return {...state, loading: true}
+      return {...state, loading: true, query: ``}
     default:
       return state
   }

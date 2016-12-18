@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { searchWikiAction, setQueryAction } from './actions/wikiActions'
 import { Search } from './components/Search'
 import { LoadingIndicator } from './components/LoadingIndicator'
+import { Articles } from './components/Articles'
 
 export class App extends Component {
   constructor() {
@@ -23,8 +24,9 @@ export class App extends Component {
     console.log(this.props)
     return (
       <div>
-        <Search setQuery={this.handleSetQuery} searchWiki={this.handleSearchWiki} />
-        <LoadingIndicator loading={ this.props.loading }/>
+        <Search query={this.props.query} setQuery={ this.handleSetQuery } searchWiki={ this.handleSearchWiki } />
+        <LoadingIndicator loading={ this.props.loading } />
+        <Articles articles={ this.props.articles } />
       </div>
     )
   }
