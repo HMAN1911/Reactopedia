@@ -4,7 +4,7 @@ import rootReducer from '../reducers'
 import rootSaga from '../sagas'
 
 const makeStore = () => {
-  const sagaMiddleware = createSagaMiddleware();
+  const sagaMiddleware = createSagaMiddleware()
   return {
     ...createStore(rootReducer,
       applyMiddleware(sagaMiddleware)),

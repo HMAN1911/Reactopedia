@@ -5,9 +5,7 @@ const wikipediaArticles = (query) => {
   return fetch(wikiAPIEndpoint + query)
     .then(resolve => resolve.json())
     .then((res) => {
-      return Object.keys(res.query.pages).map(e => {
-        return res.query.pages[e]
-      })
+      return Object.keys(res.query.pages).map(e => res.query.pages[e])
     })
 }
 

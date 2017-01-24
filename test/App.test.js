@@ -17,5 +17,4 @@ describe('test App component', () => {
     const wrapper = shallow(<App />)
     expect(wrapper.find(Search).length).toEqual(1)
   })
-
 })
